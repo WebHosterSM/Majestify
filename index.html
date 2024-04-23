@@ -32,12 +32,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column; /* Arrange boxes vertically */
+            flex-wrap: wrap; /* Allow flex items to wrap */
             padding: 20px;
         }
 
         .box {
-            width: calc(100% - 40px);
+            width: calc(50% - 20px); /* Two boxes per row */
             margin: 10px;
             background-color: #202020;
             padding: 20px;
@@ -60,12 +60,11 @@
             height: 100%;
         }
 
-        body {
-            background-image: url('blob:https://web.whatsapp.com/f1fa8b5d-bad5-40d6-9404-4ebc3a7135de'); /* Specify the path to your background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-
+        @media screen and (max-width: 768px) {
+            /* Adjust layout for smaller screens */
+            .box {
+                width: calc(100% - 20px); /* Single column layout */
+            }
         }
     </style>
 </head>
